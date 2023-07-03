@@ -2,6 +2,7 @@
 
 const path = require('path')
 const AutoLoad = require('@fastify/autoload')
+console.log(`[INFO] app.js file processing`)
 
 // Pass --options via CLI arguments in command to enable these options.
 module.exports.options = {}
@@ -26,3 +27,4 @@ module.exports = async function (fastify, opts) {
     options: Object.assign({}, opts)
   })
 }
+console.log(`[INFO] app.js file done`)

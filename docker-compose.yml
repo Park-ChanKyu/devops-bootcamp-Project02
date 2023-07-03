@@ -1,0 +1,20 @@
+version: '3.1'
+
+services:
+  fastify:
+    image: "ohrory218/helloworld:1.1"
+    ports:
+      - "3000:3000"
+    container_name: server
+    links:
+      - mongo
+    restart: on-failure
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: roheerumi
+    container_name: mongodb

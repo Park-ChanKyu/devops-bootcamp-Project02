@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - cd helloworld-web
+      - npm install
+  build:
+    commands:
+      - npm run build
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'helloworld-web/build' # 특수문자가 있을 시 ''로 감싸주어야 함
+  #discard-paths: yes # 디렉토리는 포함하지 않는 경우 사용
